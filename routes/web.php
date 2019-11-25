@@ -17,9 +17,15 @@ Route::get('/', function () {
 
 Route::resource('product','ProductController');
 
+Route::resource('select','ShowProductController');
+
 Route::resource('categorie','CategoriesController');
 
 Route::resource('admin','AdminController');
+
+Route::resource('addtocart','AddToCartController');
+
+Route::get('editamoount','EditAmountController@AddAmount');
 
 Auth::routes();
 

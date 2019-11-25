@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="{{URL::to('product')}}">CIS online</a>
+    <a class="navbar-brand" href="{{URL::to('')}}">CIS online</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,29 +8,33 @@
      @isset(Auth::user()->status)
             @if(Auth::user()->status == 'admin')
             <li class="nav-item active">
-            <a class="nav-link" href="{{URL::to('home')}}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{URL::to('')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{URL::to('product/create')}}">App Product</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{URL::to('product')}}">Product</a>
+           </li>
+
             @endif
 
             @if(Auth::user()->status == 'member')
             <li class="nav-item active">
-            <a class="nav-link" href="{{URL::to('home')}}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{URL::to('')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="{{URL::to('product/create')}}">Shop Product</a>
+            <a class="nav-link" href="{{URL::to('select')}}">Shop Product</a>
             </li>
             @endif
             
      @endisset
      @empty(Auth::user()->status)
      <li class="nav-item active">
-            <a class="nav-link" href="{{URL::to('home')}}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{URL::to('')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="{{URL::to('product/create')}}">show Product</a>
+            <a class="nav-link" href="{{URL::to('select')}}">show Product</a>
             </li>
      @endempty
          

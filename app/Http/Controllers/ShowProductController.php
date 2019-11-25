@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\categories;
-use Illuminate\Http\Request;
+use App\product;
 
-class CategoriesController extends Controller
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+class ShowProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categorie = Categories::all();
-        return view('categorie.index',compact('categorie',$categorie));
+        $products = Product::all();
+        return view('select.index',compact('products',$products));
     }
 
     /**
@@ -25,7 +28,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categorie.create');
+        //
     }
 
     /**
@@ -36,35 +39,31 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //validate
-        $request->validate([
-            'cate_title'=>'required'
-        ]);
-        $categorie = Categories::create([
-            'cate_title' => $request->cate_title
-        ]);
-        //return redirect('/categorie/'.$categorie->id);
-        return view('categorie.create');
-    } 
+        //
+    }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\categories  $categories
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(categories $categories)
+    public function show($id)
     {
-        //
+        $categorie = Categories::all();
+        $products = DB::select('select * from products where id = :id', ['id' => $id]);
+        //return $products;
+        //return [$products->product_tite];
+        return view('select.show',compact(['products','categorie']));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\categories  $categories
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(categories $categories)
+    public function edit($id)
     {
         //
     }
@@ -73,10 +72,10 @@ class CategoriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\categories  $categories
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, categories $categories)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -84,10 +83,10 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\categories  $categories
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(categories $categories)
+    public function destroy($id)
     {
         //
     }

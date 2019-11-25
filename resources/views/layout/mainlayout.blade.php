@@ -6,6 +6,7 @@
         @include('layout.pages.head')
     </head>
     <body>
+           
         @include('layout.pages.nav')
 
         @yield('content')
