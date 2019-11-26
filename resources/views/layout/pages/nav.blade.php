@@ -16,6 +16,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{URL::to('product')}}">Product</a>
            </li>
+           <li class="nav-item">
+                <a class="nav-link" href="{{URL::to('manage')}}">ManaOrder</a>
+           </li>
 
             @endif
 
@@ -25,6 +28,9 @@
             </li>
             <li class="nav-item">
             <a class="nav-link" href="{{URL::to('select')}}">Shop Product</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="{{URL::to('order')}}">Order Product</a>
             </li>
             @endif
             

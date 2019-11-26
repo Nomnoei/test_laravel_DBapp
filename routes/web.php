@@ -25,8 +25,20 @@ Route::resource('admin','AdminController');
 
 Route::resource('addtocart','AddToCartController');
 
+Route::resource('Confim','ConfimOrderController');
+
+Route::resource('order','OrderDetailControllerController');
+
+Route::get('OrderData','OrderDataController@ShowDataOrder');
+
+Route::get('manage','ManageController@index');
+
+Route::get('manage/{id}','ManageController@show');
+
 Route::get('editamoount','EditAmountController@AddAmount');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('clear','ClearController');

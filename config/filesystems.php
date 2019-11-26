@@ -54,6 +54,12 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'slip' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/slip',
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

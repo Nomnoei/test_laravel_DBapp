@@ -53,14 +53,14 @@
             </table>
             <input type="submit" value="คำนวนราคาใหม่" class="btn btn-warning">
         </form>
+            <a href="{{URL::to('clear')}}" class="btn btn-danger" >ลบประวัติตะกล้าสินค้า</a>
 
             <a href="{{URL::to('select')}}" class="btn btn-danger">กลับไปหน้าเลือกสินค้า</a>
 
-            <a href="" class="btn btn-success pl-5 pr-5">ซื้อ</a>
+            <a href="{{URL::to('Confim')}}" class="btn btn-success pl-5 pr-5">ซื้อ</a>
          
 
     </div>
-     
-
+ 
 @endsection
 
