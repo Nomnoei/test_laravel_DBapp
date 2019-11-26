@@ -52,7 +52,7 @@ class ProductController extends Controller
         $extension = $cover->getClientOriginalExtension();
         $name_pic  = $cover->getFilename().'.'.$extension;
        
-
+        //dd($cover);
         //validate
         $request->validate([
             'product_tite'=>'required',

@@ -29,6 +29,12 @@ Route::resource('Confim','ConfimOrderController');
 
 Route::resource('order','OrderDetailControllerController');
 
+Route::resource('transfer','TransferController');
+
+Route::get('transfer','TransferController@forminsert');
+
+Route::resource('upslip','TransferController');
+
 Route::get('OrderData','OrderDataController@ShowDataOrder');
 
 Route::get('manage','ManageController@index');
