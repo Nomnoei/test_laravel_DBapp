@@ -17,7 +17,9 @@ class ShowProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        //$products = Product::all();
+        $products = DB::table('products')->paginate(3);
+       
         return view('select.index',compact('products',$products));
     }
 
@@ -89,5 +91,16 @@ class ShowProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function fet_data_page(Request $request){
+       
+        /*
+        if($request->ajax()){
+           // $products = DB::table('products')->paginate(3);
+            //return view('select.index',compact('products'))-render();
+            dd($request->ajax());
+        }
+        */
+        return $request;
     }
 }

@@ -56,3 +56,7 @@ Route::get('showimage/{id}','ImageShowController@showimage');
 Route::get('Confimslip/{id}','ImageShowController@Confimslip');
 
 Route::get('closeslip/{id}','ImageShowController@closeslip');
+
+Route::post('/search-product','SearchController@search_product');
+
+Route::post('/search/fet_data_page','ShowProductController@fet_data_page');
