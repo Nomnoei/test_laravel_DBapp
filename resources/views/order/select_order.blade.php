@@ -43,7 +43,7 @@
                     @elseif($num == 2)
                     <td>{{$status}}</td>
                     @elseif($num == 3)
-                    <td><a href="" class="btn btn-success">ส่งหลักฐานใหม่</a> </td>
+                    <td><a href="{{URL::to('transfer/?order_id='.$orders_lists->id)}}" class="btn btn-success">ส่งหลักฐานใหม่</a> </td>
                     @endif
                     
                     
@@ -62,6 +62,7 @@
         </tbody>
     
     </table>
+
 </div>
 
 @endsection

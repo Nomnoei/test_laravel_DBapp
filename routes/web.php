@@ -33,6 +33,8 @@ Route::resource('transfer','TransferController');
 
 Route::get('transfer','TransferController@forminsert');
 
+Route::get('showslip','TransferController@showslip');
+
 Route::resource('upslip','TransferController');
 
 Route::get('OrderData','OrderDataController@ShowDataOrder');
@@ -48,3 +50,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('clear','ClearController');
+
+Route::get('showimage/{id}','ImageShowController@showimage');
+
+Route::get('Confimslip/{id}','ImageShowController@Confimslip');
+
+Route::get('closeslip/{id}','ImageShowController@closeslip');

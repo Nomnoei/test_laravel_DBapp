@@ -67,7 +67,7 @@ class TransferController extends Controller
      */
     public function show(Transfer $transfer)
     {
-        //
+        return "asdasd";
     }
 
     /**
@@ -117,5 +117,11 @@ class TransferController extends Controller
     
         
        
+    }
+
+    public function showslip(Request $request)
+    {
+        dd($request);
+        return "";
     }
 }

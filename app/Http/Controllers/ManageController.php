@@ -16,7 +16,8 @@ class ManageController extends Controller
 
         $orders_list = DB::select('select * from order_list_controllers');
         $users =  DB::select('select * from users');
-        return view('manage.manage_order',compact(['orders_list','users']));
+        $transfers = DB::select('select * from transfers');
+        return view('manage.manage_order',compact(['orders_list','users','transfers']));
     }
 
     public function show(Request $request){
